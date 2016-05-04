@@ -1,4 +1,5 @@
 <?php
+echo 'hi'; exit;
 // Указание пути к директории приложения
 defined('APPLICATION_PATH')
 || define('APPLICATION_PATH',
