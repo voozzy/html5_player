@@ -58,8 +58,7 @@ class IndexController extends Zend_Controller_Action
         $fileid = $_GET['file'];
 //
         $film[] = $getFilm = $this->_db->fetchRow("SELECT f.id, f.page_id, fw.id as windowId, fw.quality, fw.name FROM films AS f JOIN film_window AS fw ON fw.films_id = f.id JOIN new_files AS nf ON nf.window_id = fw.id WHERE nf.id ='" . $fileid . "'");
-
-        var_dump($film);
+        
         if($getFilm['page_id'] == '15') {
             $recordingStudio = explode(' ', $getFilm['name']);
             $otherPart = $this->_db->fetchAll("SELECT f.id, f.page_id, fw.id as windowId, fw.quality, fw.name FROM films AS f JOIN film_anotherpart AS fa ON fa.films_id = f.id JOIN film_window AS fw ON fw.films_id = f.id WHERE fa.id_anotherpart IN('".$getFilm['id']."') AND fw.name LIKE '%".$recordingStudio[count($recordingStudio) - 1]."%' ");
