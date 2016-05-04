@@ -178,6 +178,7 @@ class IndexController extends Zend_Controller_Action
 
 ';
         header("Access-Control-Allow-Origin: http://bt.3tv.im ");
+        header('Content-Type: application/html; charset=utf-8');
         echo $html;
         
     }
