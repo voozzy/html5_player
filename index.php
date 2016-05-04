@@ -1,5 +1,5 @@
 <?php
-echo 'hi'; exit;
+var_dump(dirname(dirname(__FILE__))); exit;
 // Указание пути к директории приложения
 defined('APPLICATION_PATH')
 || define('APPLICATION_PATH',
