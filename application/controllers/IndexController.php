@@ -55,7 +55,10 @@ class IndexController extends Zend_Controller_Action
         $this->_helper->layout->disableLayout();
         $this->_helper->viewRenderer->setNoRender();
 
-        $fileid = $_GET['file'];
+        if($_GET['file']){
+            $fileid = $_GET['file'];
+        }
+        
 //
         $film[] = $getFilm = $this->_db->fetchRow("SELECT f.id, f.page_id, fw.id as windowId, fw.quality, fw.name FROM films AS f JOIN film_window AS fw ON fw.films_id = f.id JOIN new_files AS nf ON nf.window_id = fw.id WHERE nf.id ='" . $fileid . "'");
         
