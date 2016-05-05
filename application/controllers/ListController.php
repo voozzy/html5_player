@@ -106,7 +106,7 @@ class ListController extends Zend_Controller_Action
                 fclose($myfile);
 
                 $jsonlist .= '
-                        {"src" : "http://test.tree.tv/m3u8/' . $value['name'] . '.m3u8", "label": "' . $value['name'] . '"},';
+                        {"src" : "http://player.3tv.im/m3u8/' . $value['name'] . '.m3u8", "label": "' . $value['name'] . '"},';
 
 
             }
