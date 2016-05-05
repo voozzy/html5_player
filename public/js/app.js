@@ -367,9 +367,9 @@ var Player = (function ($, Plugins) {
 
 var playerWrap = 'video';
 var playerMain = new Player();
-//playerMain.setPlaylist('http://testcdn.3tv.im/gen.php?file=' + FileListId).then(function(data){
+playerMain.setPlaylist('http://player.3tv.im/list/?file=' + FileListId).then(function(data){
 //playerMain.setPlaylist('http://test.tree.tv/test/index/test1?file=12240').then(function(data){
- playerMain.setPlaylist('http://test.tree.tv/test/index/test1?file='+ FileListId).then(function(data){
+// playerMain.setPlaylist('http://test.tree.tv/test/index/test1?file='+ FileListId).then(function(data){
 //playerMain.setPlaylist('source.json').then(function (data) {
     playerMain.init(playerWrap, data);
 }, function () {
