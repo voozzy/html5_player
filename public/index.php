@@ -1,6 +1,4 @@
 <?php
-session_set_cookie_params(0, "/", ".tree.tv");
-session_start();
 
 // Указание пути к директории приложения
 defined('APPLICATION_PATH')
