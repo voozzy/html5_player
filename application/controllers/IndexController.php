@@ -12,7 +12,7 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        var_dump($_SESSION);
+        var_dump($_SESSION); exit;
         $layout = new Zend_Layout();
 
         if($_GET['file']){
