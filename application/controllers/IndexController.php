@@ -7,15 +7,11 @@ class IndexController extends Zend_Controller_Action
     public function init()
     {
         /* Initialize action controller here */
-        var_dump($_SERVER['HTTP_REFERER']); exit;
-        if(!is_null($_SERVER['HTTP_REFERER'])){
             $url = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
 
             if($url !== 'm.tree.tv'){
                 $this->_helper->layout->setLayout('voozzy_layout');
             }
-        }
-        
         $this->_db = Zend_Db_Table::getDefaultAdapter();
     }
 
