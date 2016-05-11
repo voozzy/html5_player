@@ -58,7 +58,7 @@ class ListController extends Zend_Controller_Action
             $fileid = $_GET['file'];
         }
 
-        $film[] = $getFilm = $this->_db->fetchAll("SELECT f.id, f.page_id, fw.id as windowId, fw.quality, fw.name FROM film_window AS fw JOIN films AS f ON f.id = fw.films_id WHERE fw.films_id = (SELECT ffw.films_id FROM film_window AS ffw JOIN new_files AS nf ON nf.window_id = ffw.id WHERE nf.id = '".$fileid."' LIMIT 1)");
+        $getFilm = $this->_db->fetchAll("SELECT f.id, f.page_id, fw.id as windowId, fw.quality, fw.name FROM film_window AS fw JOIN films AS f ON f.id = fw.films_id WHERE fw.films_id = (SELECT ffw.films_id FROM film_window AS ffw JOIN new_files AS nf ON nf.window_id = ffw.id WHERE nf.id = '".$fileid."' LIMIT 1)");
 //        $film[] = $getFilm = $this->_db->fetchRow("SELECT f.id, f.page_id, fw.id as windowId, fw.quality, fw.name FROM films AS f JOIN film_window AS fw ON fw.films_id = f.id JOIN new_files AS nf ON nf.window_id = fw.id WHERE nf.id ='" . $fileid . "'");
 
 //        if($getFilm['page_id'] == '15') {
@@ -71,7 +71,7 @@ class ListController extends Zend_Controller_Action
 
 
         $jsonlist = '[';
-        foreach ($film as $keyFilm => $valueFilm) {
+        foreach ($getFilm as $keyFilm => $valueFilm) {
             $jsonlist .= '
     {
                 "name" : "' . $valueFilm['name'] . '",
