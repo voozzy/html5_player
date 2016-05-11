@@ -9,7 +9,7 @@ realpath(dirname(__FILE__) . '/../application'));
 defined('APPLICATION_ENV')
 || define('APPLICATION_ENV',
 (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV')
-    : 'production'));
+    : 'development'));
 
 // Обычно требуется также добавить директорию library/
 // в include_path, особенно если она содержит инсталляцию ZF
