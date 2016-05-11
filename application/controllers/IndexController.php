@@ -8,9 +8,11 @@ class IndexController extends Zend_Controller_Action
     {
         /* Initialize action controller here */
         $url = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
-        var_dump($url); exit;
+        if($url == 'm.tree.tv'){
+            $this->_helper->layout->setLayout('voozzy_layout');
+        }
         
-        $this->_helper->layout->setLayout('voozzy_layout');
+        
         $this->_db = Zend_Db_Table::getDefaultAdapter();
     }
 
