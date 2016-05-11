@@ -8,7 +8,7 @@ class IndexController extends Zend_Controller_Action
     {
         /* Initialize action controller here */
         $url = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
-        if($url == 'm.tree.tv'){
+        if($url !== 'm.tree.tv'){
             $this->_helper->layout->setLayout('voozzy_layout');
         }
         
